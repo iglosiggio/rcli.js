@@ -14,7 +14,7 @@ function createRCLI(handlers, options) {
     const error = text => (write(`Error: ${text}`, callback()));
 
     const message = line.toString();
-    const match = /^([a-z]+) (.*)$/.exec(message);
+    const match = /^([a-z-_]+) (.*)$/.exec(message);
 
     if(match === null) {
       return error('no pudo comprenderse la línea de entrada');
